@@ -1,0 +1,172 @@
+Cenário: Validação dos quadros apresentados na tela geral
+Dado que estou logado no sistema com o usuario Justine Robinson
+Quando acessar a página de Informações pessoais
+Então apresenta o quadro de "Informações gerais"
+	E apresenta o quadro de "Local"
+	E apresentado o quadro de "Oportunidades"
+	E apresenta o quadro de "Vendas"
+	E apresenta o quadro de "Limite de crédito"
+	E apresenta o quadro de "Títulos financeiros"
+	E apresenta o quadro de "Atividades"
+
+Cenário: Validação das informações gerais
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Informações gerais"
+Então apresenta a foto do perfil
+	E apresenta o nome "Justine Robinson"
+	E apresenta o nome da empresa "Acme inc"
+	E apresenta o status "Ativo"
+	E apresenta o celular "45 9 9555 5555"
+	E apresenta o e-mail "justine@email.com"
+
+Cenário: Validação do Local
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Local"
+Então apresenta o local no google maps
+	E apresenta o endereço "Avenida Brasil,4019"
+
+Cenário: Validação das Oportunidades
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Oportunidades"
+Então apresenta a opção "Ganhas" 
+	E apresenta a opção "Abertas"  
+	E apresenta a opção "Perdida"  
+	E apresenta a opção "Descartadas"
+
+Cenário: Validação de dados das oportunidades Ganhas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Oportunidades"
+	E valido a opção "Ganhas"
+Então apresenta a quantidade de "4" oportunidades
+	E apresenta o valor de "R$ 20.000,00"
+
+Cenário: Validação de dados das oportunidades Abertas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Oportunidades"
+	E valido a opção "Abertas"
+Então apresenta a quantidade de "2" oportunidades
+	E apresenta o valor de "Diversas moedas"
+
+Cenário: Validação de dados das oportunidades Perdidas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Oportunidades"
+	E valido a opção "Perdida"
+Então apresenta a quantidade de "1" oportunidades
+	E apresenta o valor de "R$ 4.300,00"
+
+
+Cenário: Validação de dados das oportunidades Descartadas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro "Oportunidades"
+	E valido a opção "Descartadas"
+Então apresenta a quantidade de "0" oportunidades
+	E apresenta o valor de "-"
+
+Cenário: Validação de títulos financeiros vencidos
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Títulos financeiros"
+	E valido a opção "Vencidos"
+Então apresenta a quantidade de "1"
+	E apresenta o valor "R$3.105,00"
+
+Cenário: Validação de títulos financeiros a vencer
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Títulos financeiros"
+	E valido a opção "A vencer"
+Então apresenta a quantidade de "2"
+	E apresenta o valor "R$3.105,00"
+
+Cenário: Validação de títulos financeiros pagos
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Títulos financeiros"
+	E valido a opção "Pagos"
+Então apresenta a quantidade de "2"
+	E apresenta o valor "R$3.105,00"
+
+Cenário: Validação de todas as atividades
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E clico em "Total"
+Então apresenta o número de "25" atividades
+ 	E apresenta na linha do tempo "Atividades em atraso"
+	E apresenta na linha do tempo "Atividades previstas"
+	E apresenta na linha do tempo "Atividades concluídas"
+
+Cenário: Validação de pesquisa de atividades
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E no campo "Pesquisar" informo 	"Reunião orçamento"
+Então apresenta na linha a "atividade prevista" descrita como "Reunião orçamento"
+
+Cenário: Validação de atividades em atraso
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E clico em "Em atraso"
+Então apresenta o número de "1" atividades
+ 	E apresenta na linha do tempo "Atividades em atraso"
+	E apresenta a atividade "ligação de agendamento de reunião"
+
+Cenário: Validação de atividades em andamento
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E clico em "Em andamento"
+Então apresenta o número de "0" atividades
+ 	E apresenta "Não há atividades em andamento"
+
+Cenário: Validação de atividades previstas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E clico em "Previstas"
+Então apresenta o número de "3" atividades
+ 	E apresenta na linha do tempo "Atividades previstas"
+	E apresenta a atividade "Reunião orçamento"
+	E apresenta a atividade "Email documentação"
+	E apresenta a atividade "Almoço cooperativo"
+
+Cenário: Validação de atividades concluidas
+Dado que estou logado no sistema com o usuario Justine Robinson
+	E estou na opção de informações pessoais
+Quando valido o quadro de "Atividades"
+	E clico em "Concluídas"
+Então apresenta o número de "21" atividades
+ 	E apresenta na linha do tempo "Atividades concluidas"
+	E apresenta a atividade "Apresentação feira agrícola"
+	E apresenta a atividade "Email orçamento"
+	E apresenta a atividade "Email contrato"
+	E apresenta a atividade "Ligação contrato"
+	E apresenta a atividade "atividade 5"
+	E apresenta a atividade "atividade 6"
+	E apresenta a atividade "atividade 7"
+	E apresenta a atividade "atividade 8"
+	E apresenta a atividade "atividade 9"
+	E apresenta a atividade "atividade 10"
+	E apresenta a atividade "atividade 11"
+	E apresenta a atividade "atividade 12"
+	E apresenta a atividade "atividade 13"
+	E apresenta a atividade "atividade 14"
+	E apresenta a atividade "atividade 15"
+	E apresenta a atividade "atividade 16"
+	E apresenta a atividade "atividade 17"
+	E apresenta a atividade "atividade 18"
+	E apresenta a atividade "atividade 19"
+	E apresenta a atividade "atividade 20"
+	E apresenta a atividade "atividade 21"
+
+
+
+
